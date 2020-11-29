@@ -13,7 +13,7 @@ Angular material 11.0.1
 
 ## Screenshot
 
-![App ScreenShot](https://github.com/ersaumya/Task-Board/blob/main/src/assets/taskBoard.JPG)
+![App ScreenShot](https://github.com/ersaumya/Task-Board/blob/main/src/assets/taskBoard.JPG?raw=true)
 
 
 
