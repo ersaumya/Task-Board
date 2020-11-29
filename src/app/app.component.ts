@@ -11,42 +11,46 @@ import { TaskListComponent } from './task-list/task-list.component';
 export class AppComponent {
   title = 'board';
 
-  constructor(private dialog:MatDialog){}
+  constructor(private dialog: MatDialog) {}
 
-  taskLists:TaskList[]=[
+  taskLists: TaskList[] = [
     {
-      "title":"Task1",
-      "id":"t1",
-      "tasks":[{
-        "id":"c1",
-        "title":"task 1",
-        "description":"task 1 desc"
-      }]
+      title: 'Task1',
+      id: 't1',
+      tasks: [
+        {
+          id: 'c1',
+          title: 'task 1',
+          description: 'task 1 desc',
+        },
+      ],
     },
-     {
-      "title":"Task2",
-      "id":"t2",
-      "tasks":[{
-        "id":"c1",
-        "title":"task 1",
-        "description":"task 1 desc"
-      }]
-    }
-  ]
-  addTaskList(){
+    {
+      title: 'Task2',
+      id: 't2',
+      tasks: [
+        {
+          id: 'c1',
+          title: 'task 1',
+          description: 'task 1 desc',
+        },
+      ],
+    },
+  ];
+  addTaskList() {
     const dialogRef = this.dialog.open(TaskListComponent, {
       width: '500px',
       height: '300px',
       data: {},
     });
-    dialogRef
-    .afterClosed()
-    .subscribe(result=>{
+    dialogRef.afterClosed().subscribe((result) => {
       this.taskLists.push({
-        title:result.taskListName,
-        id:result.taskListName,
-        tasks:[]
-      })
-    })
+        title: result.taskListName,
+        id: result.taskListName,
+        tasks: [],
+      });
+    });
   }
+
+  
 }
