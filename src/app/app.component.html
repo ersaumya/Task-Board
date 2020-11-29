@@ -6,3 +6,31 @@
   <mat-icon>add_circle</mat-icon>
   <span> Add Tasklist</span>
 </button>
+
+<div class="list-container" cdkDropList [cdkDropListData]="taskLists" [cdkDropListConnectedTo]="[taskId]"
+  (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+  <div class="list-card mat-elevation-z1" *ngFor="let task of taskLists">
+    <h2 cdkDragHandle>{{task.title}} <mat-icon color="warn" style="cursor: pointer;"(click)="deleteList(task.id)">delete</mat-icon>
+    </h2>
+    <div cdkDropList class="list-card-content" [id]="task.id" [cdkDropListData]="task.tasks"
+      (cdkDropListDropped)="onTaskdrop($event)">
+
+      <mat-card *ngFor="let card of task.tasks" cdkDrag>
+        <mat-card-content>
+          <h2>{{card.title}}</h2>
+          <div>{{card.description}}</div>
+          <div> <button mat-icon-button color="primary" (click)="addCard(task.id, card)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCard(task.id, card.id)">
+              <mat-icon>delete</mat-icon>
+            </button></div>
+        </mat-card-content>
+      </mat-card>
+
+      <button mat-button color="primary" (click)="addCard(task.id)">
+        <mat-icon>add</mat-icon>Add card
+      </button>
+    </div>
+  </div>
+</div>
