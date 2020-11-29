@@ -9,11 +9,12 @@ Run `ng serve --o` for a dev server. Navigate to `http://localhost:4200/`. The a
 ## Technology used
 
 Angular 11.0.2
+
 Angular material 11.0.1
 
 ## Screenshot
 
-![App ScreenShot](https://github.com/ersaumya/Task-Board/blob/main/src/assets/taskBoard.JPG?raw=true)
+![App ScreenShot](https://github.com/ersaumya/Task-Board/blob/master/src/assets/taskBoard.JPG?raw=true)
 
 
 
